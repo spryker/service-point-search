@@ -5,7 +5,7 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace SprykerTest\Zed\ServicePointSearch\Plugin\Elasticsearch\ResultFormatter;
+namespace SprykerTest\Client\ServicePointSearch\Plugin\Elasticsearch\ResultFormatter;
 
 use Codeception\Test\Unit;
 use Elastica\Query;
@@ -21,7 +21,7 @@ use SprykerTest\Client\ServicePointSearch\ServicePointSearchClientTester;
  * Auto-generated group annotations
  *
  * @group SprykerTest
- * @group Zed
+ * @group Client
  * @group ServicePointSearch
  * @group Plugin
  * @group Elasticsearch
