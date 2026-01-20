@@ -73,12 +73,14 @@ class ServicePointSearchBusinessTester extends Actor
      */
     protected const TYPE_SERVICE_POINT = 'service_point';
 
-    /**
-     * @return void
-     */
     public function setDependencies(): void
     {
-        $this->setQueueAdaptersDependency();
+        $this->setDependency(QueueDependencyProvider::QUEUE_ADAPTERS, function (Container $container) {
+            return [
+                $container->getLocator()->rabbitMq()->client()->createQueueAdapter(),
+                $container->getLocator()->symfonyMessenger()->client()->createQueueAdapter(),
+            ];
+        });
     }
 
     /**
@@ -406,18 +408,6 @@ class ServicePointSearchBusinessTester extends Actor
         }
 
         return $servicePointAddressTransfer;
-    }
-
-    /**
-     * @return void
-     */
-    protected function setQueueAdaptersDependency(): void
-    {
-        $this->setDependency(QueueDependencyProvider::QUEUE_ADAPTERS, function (Container $container) {
-            return [
-                $container->getLocator()->rabbitMq()->client()->createQueueAdapter(),
-            ];
-        });
     }
 
     /**
