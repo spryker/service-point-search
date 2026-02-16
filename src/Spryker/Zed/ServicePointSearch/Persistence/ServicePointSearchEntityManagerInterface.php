@@ -12,14 +12,14 @@ use Generated\Shared\Transfer\ServicePointSearchTransfer;
 interface ServicePointSearchEntityManagerInterface
 {
     /**
-     * @param list<int> $servicePointIds
+     * @param array<int> $servicePointIds
      *
      * @return void
      */
     public function deleteServicePointSearchByServicePointIds(array $servicePointIds): void;
 
     /**
-     * @param list<int> $servicePointSearchIds
+     * @param array<int> $servicePointSearchIds
      *
      * @return void
      */

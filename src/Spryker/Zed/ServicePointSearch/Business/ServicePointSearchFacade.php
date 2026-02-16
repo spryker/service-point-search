@@ -103,9 +103,9 @@ class ServicePointSearchFacade extends AbstractFacade implements ServicePointSea
      * @api
      *
      * @param \Generated\Shared\Transfer\FilterTransfer $filterTransfer
-     * @param list<int> $servicePointIds
+     * @param array<int> $servicePointIds
      *
-     * @return list<\Generated\Shared\Transfer\SynchronizationDataTransfer>
+     * @return array<\Generated\Shared\Transfer\SynchronizationDataTransfer>
      */
     public function getServicePointSynchronizationDataTransfersByIds(FilterTransfer $filterTransfer, array $servicePointIds = []): array
     {

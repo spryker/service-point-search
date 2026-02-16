@@ -193,7 +193,7 @@ class ServicePointSearchDataMapper implements ServicePointSearchDataMapperInterf
     /**
      * @param \Generated\Shared\Transfer\ServicePointTransfer $servicePointTransfer
      *
-     * @return list<string>
+     * @return array<string>
      */
     protected function getServiceTypesData(ServicePointTransfer $servicePointTransfer): array
     {

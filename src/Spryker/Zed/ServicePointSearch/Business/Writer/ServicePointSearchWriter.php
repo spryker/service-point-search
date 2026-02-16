@@ -99,7 +99,7 @@ class ServicePointSearchWriter implements ServicePointSearchWriterInterface
     }
 
     /**
-     * @param list<\Generated\Shared\Transfer\EventEntityTransfer> $eventTransfers
+     * @param array<\Generated\Shared\Transfer\EventEntityTransfer> $eventTransfers
      *
      * @return void
      */
@@ -111,7 +111,7 @@ class ServicePointSearchWriter implements ServicePointSearchWriterInterface
     }
 
     /**
-     * @param list<\Generated\Shared\Transfer\EventEntityTransfer> $eventTransfers
+     * @param array<\Generated\Shared\Transfer\EventEntityTransfer> $eventTransfers
      *
      * @return void
      */
@@ -126,7 +126,7 @@ class ServicePointSearchWriter implements ServicePointSearchWriterInterface
     }
 
     /**
-     * @param list<\Generated\Shared\Transfer\EventEntityTransfer> $eventTransfers
+     * @param array<\Generated\Shared\Transfer\EventEntityTransfer> $eventTransfers
      *
      * @return void
      */
@@ -141,7 +141,7 @@ class ServicePointSearchWriter implements ServicePointSearchWriterInterface
     }
 
     /**
-     * @param list<\Generated\Shared\Transfer\EventEntityTransfer> $eventTransfers
+     * @param array<\Generated\Shared\Transfer\EventEntityTransfer> $eventTransfers
      *
      * @return void
      */
@@ -156,7 +156,7 @@ class ServicePointSearchWriter implements ServicePointSearchWriterInterface
     }
 
     /**
-     * @param list<int> $servicePointIds
+     * @param array<int> $servicePointIds
      *
      * @return void
      */
@@ -184,7 +184,7 @@ class ServicePointSearchWriter implements ServicePointSearchWriterInterface
     }
 
     /**
-     * @param list<int> $servicePointIds
+     * @param array<int> $servicePointIds
      *
      * @return \Generated\Shared\Transfer\ServicePointCollectionTransfer
      */
@@ -203,7 +203,7 @@ class ServicePointSearchWriter implements ServicePointSearchWriterInterface
     }
 
     /**
-     * @param list<\Generated\Shared\Transfer\ServicePointTransfer> $servicePointTransfers
+     * @param array<\Generated\Shared\Transfer\ServicePointTransfer> $servicePointTransfers
      * @param array<int, array<string, \Generated\Shared\Transfer\ServicePointSearchTransfer>> $servicePointSearchTransfers
      *
      * @return void
@@ -235,7 +235,7 @@ class ServicePointSearchWriter implements ServicePointSearchWriterInterface
     /**
      * @param \Generated\Shared\Transfer\ServicePointTransfer $servicePointTransfer
      * @param array<int, array<string, \Generated\Shared\Transfer\ServicePointSearchTransfer>> $servicePointSearchTransfers
-     * @param list<\Generated\Shared\Transfer\StoreTransfer> $storeTransfers
+     * @param array<\Generated\Shared\Transfer\StoreTransfer> $storeTransfers
      *
      * @return void
      */
@@ -273,7 +273,7 @@ class ServicePointSearchWriter implements ServicePointSearchWriterInterface
     }
 
     /**
-     * @param list<\Generated\Shared\Transfer\ServicePointSearchTransfer> $servicePointSearchTransfers
+     * @param array<\Generated\Shared\Transfer\ServicePointSearchTransfer> $servicePointSearchTransfers
      *
      * @return array<int, array<string, \Generated\Shared\Transfer\ServicePointSearchTransfer>>
      */
@@ -330,7 +330,7 @@ class ServicePointSearchWriter implements ServicePointSearchWriterInterface
     /**
      * @param array<string, \Generated\Shared\Transfer\ServicePointSearchTransfer> $servicePointSearchTransfers
      *
-     * @return list<int>
+     * @return array<int>
      */
     protected function extractServicePointSearchIds(array $servicePointSearchTransfers): array
     {

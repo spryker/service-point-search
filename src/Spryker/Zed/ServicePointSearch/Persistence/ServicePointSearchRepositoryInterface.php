@@ -12,7 +12,7 @@ use Generated\Shared\Transfer\FilterTransfer;
 interface ServicePointSearchRepositoryInterface
 {
     /**
-     * @param list<int> $servicePointIds
+     * @param array<int> $servicePointIds
      *
      * @return array<\Generated\Shared\Transfer\ServicePointSearchTransfer>
      */
@@ -20,9 +20,9 @@ interface ServicePointSearchRepositoryInterface
 
     /**
      * @param \Generated\Shared\Transfer\FilterTransfer $filterTransfer
-     * @param list<int> $servicePointIds
+     * @param array<int> $servicePointIds
      *
-     * @return list<\Generated\Shared\Transfer\SynchronizationDataTransfer>
+     * @return array<\Generated\Shared\Transfer\SynchronizationDataTransfer>
      */
     public function getServicePointSynchronizationDataTransfersByIds(FilterTransfer $filterTransfer, array $servicePointIds = []): array;
 }
