@@ -12,6 +12,7 @@ use Elastica\Query;
 use Elastica\Query\AbstractQuery;
 use Elastica\Query\BoolQuery;
 use Spryker\Client\SearchExtension\Dependency\Plugin\QueryInterface;
+use Spryker\Client\ServicePointSearch\Plugin\Elasticsearch\Query\ServicePointSearchQueryPlugin;
 use Spryker\Client\ServicePointSearch\Plugin\Elasticsearch\Query\SortedServicePointSearchQueryExpanderPlugin;
 
 /**
@@ -151,12 +152,7 @@ class SortedServicePointSearchQueryExpanderPluginTest extends Unit
      */
     protected function createQueryMock(AbstractQuery $abstractQuery, ?string $searchString = null): QueryInterface
     {
-        $queryMock = $this->getMockBuilder(QueryInterface::class)
-            ->disableOriginalConstructor()
-            ->disableOriginalClone()
-            ->addMethods(['getSearchString'])
-            ->onlyMethods(['getSearchQuery'])
-            ->getMock();
+        $queryMock = $this->createMock(ServicePointSearchQueryPlugin::class);
 
         $queryMock->method('getSearchString')->willReturn($searchString);
         $queryMock->method('getSearchQuery')->willReturn(new Query($abstractQuery));
