@@ -60,9 +60,6 @@ class ServicePointSearchResultFormatterPluginTest extends Unit
      */
     protected ServicePointSearchClientTester $tester;
 
-    /**
-     * @return void
-     */
     public function testGetNameShouldReturnCorrectName(): void
     {
         // Act
@@ -72,9 +69,6 @@ class ServicePointSearchResultFormatterPluginTest extends Unit
         $this->assertSame(static::NAME, $name);
     }
 
-    /**
-     * @return void
-     */
     public function testFormatResultShouldNotSetItemsPerPageWhenQueryDoesNotHaveParameter(): void
     {
         // Arrange
@@ -88,9 +82,6 @@ class ServicePointSearchResultFormatterPluginTest extends Unit
         $this->assertNull($servicePointSearchCollectionTransfer->getItemsPerPage());
     }
 
-    /**
-     * @return void
-     */
     public function testFormatResultShouldSetItemsPerPageWhenQueryHaveParameter(): void
     {
         // Arrange
@@ -107,9 +98,6 @@ class ServicePointSearchResultFormatterPluginTest extends Unit
         $this->assertSame(3, $servicePointSearchCollectionTransfer->getItemsPerPage());
     }
 
-    /**
-     * @return void
-     */
     public function testFormatResultShouldMapResultsToServicePointSearchTransfers(): void
     {
         // Arrange
@@ -174,9 +162,6 @@ class ServicePointSearchResultFormatterPluginTest extends Unit
         return $resultSetMock;
     }
 
-    /**
-     * @return \Spryker\Client\SearchElasticsearch\Plugin\ResultFormatter\AbstractElasticsearchResultFormatterPlugin
-     */
     protected function createServicePointSearchResultFormatterPlugin(): AbstractElasticsearchResultFormatterPlugin
     {
         return new ServicePointSearchResultFormatterPlugin();

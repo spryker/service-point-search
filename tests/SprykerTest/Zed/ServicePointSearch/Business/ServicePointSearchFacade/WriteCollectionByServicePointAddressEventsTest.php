@@ -43,9 +43,6 @@ class WriteCollectionByServicePointAddressEventsTest extends Unit
      */
     protected ServicePointSearchBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -54,9 +51,6 @@ class WriteCollectionByServicePointAddressEventsTest extends Unit
         $this->tester->cleanUpDatabase();
     }
 
-    /**
-     * @return void
-     */
     public function testWriteCollectionByServicePointAddressEventsShouldPublishServicePointSearchEntities(): void
     {
         // Arrange
@@ -94,9 +88,6 @@ class WriteCollectionByServicePointAddressEventsTest extends Unit
         $this->tester->assertServicePointAddressSearchData($servicePointTransfer->getAddressOrFail(), $structuredData);
     }
 
-    /**
-     * @return void
-     */
     public function testWriteCollectionByServicePointAddressEventsDoesNothingForEmptyEventTransfers(): void
     {
         // Act

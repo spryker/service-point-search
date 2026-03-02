@@ -25,10 +25,5 @@ interface ServicePointSearchEntityManagerInterface
      */
     public function deleteServicePointSearchByServicePointSearchIds(array $servicePointSearchIds): void;
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointSearchTransfer $servicePointSearchTransfer
-     *
-     * @return void
-     */
     public function saveServicePointSearch(ServicePointSearchTransfer $servicePointSearchTransfer): void;
 }

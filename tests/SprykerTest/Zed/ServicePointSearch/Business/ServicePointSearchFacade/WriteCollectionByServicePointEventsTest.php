@@ -42,9 +42,6 @@ class WriteCollectionByServicePointEventsTest extends Unit
      */
     protected ServicePointSearchBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -53,9 +50,6 @@ class WriteCollectionByServicePointEventsTest extends Unit
         $this->tester->cleanUpDatabase();
     }
 
-    /**
-     * @return void
-     */
     public function testWriteCollectionByServicePointEventsSavesSearchEntities(): void
     {
         // Arrange
@@ -88,9 +82,6 @@ class WriteCollectionByServicePointEventsTest extends Unit
         $this->assertSame(4, $this->tester->getServicePointSearchEntitiesByServicePointIds($servicePointIds)->count());
     }
 
-    /**
-     * @return void
-     */
     public function testWriteCollectionByServicePointEventsSavesOnlyActiveSearchEntities(): void
     {
         // Arrange
@@ -123,9 +114,6 @@ class WriteCollectionByServicePointEventsTest extends Unit
         $this->assertSame(2, $this->tester->getServicePointSearchEntitiesByServicePointIds($servicePointIds)->count());
     }
 
-    /**
-     * @return void
-     */
     public function testWriteCollectionByServicePointEventsShouldSaveOnlyServicePointWithAddresses(): void
     {
         // Arrange
@@ -157,9 +145,6 @@ class WriteCollectionByServicePointEventsTest extends Unit
         $this->assertSame(2, $this->tester->getServicePointSearchEntitiesByServicePointIds($servicePointIds)->count());
     }
 
-    /**
-     * @return void
-     */
     public function testWriteCollectionByServicePointEventsDoesNothingForEmptyEventTransfers(): void
     {
         // Act
@@ -169,9 +154,6 @@ class WriteCollectionByServicePointEventsTest extends Unit
         $this->assertSame(0, $this->tester->getServicePointSearchEntitiesByServicePointIds()->count());
     }
 
-    /**
-     * @return void
-     */
     public function testWriteCollectionByServicePointEventsShouldCleanupSearchTable(): void
     {
         // Arrange
@@ -196,9 +178,6 @@ class WriteCollectionByServicePointEventsTest extends Unit
         $this->assertSame(2, $this->tester->getServicePointSearchEntitiesByServicePointIds($servicePointIds)->count());
     }
 
-    /**
-     * @return void
-     */
     public function testWriteCollectionByServicePointEventsShouldMapServicePointAndServicePointAddressToSearchData(): void
     {
         // Arrange

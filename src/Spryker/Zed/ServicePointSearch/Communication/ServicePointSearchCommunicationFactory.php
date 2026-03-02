@@ -19,9 +19,6 @@ use Spryker\Zed\ServicePointSearch\ServicePointSearchDependencyProvider;
  */
 class ServicePointSearchCommunicationFactory extends AbstractCommunicationFactory
 {
-    /**
-     * @return \Spryker\Zed\ServicePointSearch\Dependency\Facade\ServicePointSearchToServicePointFacadeInterface
-     */
     public function getServicePointFacade(): ServicePointSearchToServicePointFacadeInterface
     {
         return $this->getProvidedDependency(ServicePointSearchDependencyProvider::FACADE_SERVICE_POINT);

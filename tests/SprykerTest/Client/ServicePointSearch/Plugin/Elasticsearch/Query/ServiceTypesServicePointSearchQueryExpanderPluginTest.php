@@ -58,9 +58,6 @@ class ServiceTypesServicePointSearchQueryExpanderPluginTest extends Unit
      */
     protected ServicePointSearchClientTester $tester;
 
-    /**
-     * @return void
-     */
     public function testExpandQueryShouldNotAddFilterWhenServiceTypesParameterIsNotProvided(): void
     {
         // Arrange
@@ -76,9 +73,6 @@ class ServiceTypesServicePointSearchQueryExpanderPluginTest extends Unit
         $this->assertFalse($resultBoolQuery->hasParam(static::QUERY_PARAM_FILTER));
     }
 
-    /**
-     * @return void
-     */
     public function testExpandQueryShouldNotAddFilterWhenEmptyServiceTypesParameterIsProvided(): void
     {
         // Arrange
@@ -95,9 +89,6 @@ class ServiceTypesServicePointSearchQueryExpanderPluginTest extends Unit
         $this->assertFalse($resultBoolQuery->hasParam(static::QUERY_PARAM_FILTER));
     }
 
-    /**
-     * @return void
-     */
     public function testExpandQueryShouldThrowAnExceptionWhenProvidedServiceTypesParameterIsNotArray(): void
     {
         // Assert
@@ -111,9 +102,6 @@ class ServiceTypesServicePointSearchQueryExpanderPluginTest extends Unit
             ->expandQuery($query, [static::PARAMETER_SERVICE_TYPES => static::PARAMETER_SERVICE_TYPES]);
     }
 
-    /**
-     * @return void
-     */
     public function testExpandQueryShouldThrowAnExceptionWhenSearchQueryDoesNotContainBoolQuery(): void
     {
         // Assert
@@ -127,9 +115,6 @@ class ServiceTypesServicePointSearchQueryExpanderPluginTest extends Unit
             ->expandQuery($query, [static::PARAMETER_SERVICE_TYPES => [static::PARAMETER_SERVICE_TYPES]]);
     }
 
-    /**
-     * @return void
-     */
     public function testExpandQueryShouldAddFilterWhenServiceTypesParameterIsProvided(): void
     {
         // Arrange
@@ -153,25 +138,16 @@ class ServiceTypesServicePointSearchQueryExpanderPluginTest extends Unit
         $this->assertSame([static::TEST_SERVICE_TYPE], $termsData[static::KEY_TERMS][ServicePointIndexMap::SERVICE_TYPES]);
     }
 
-    /**
-     * @return \Elastica\Query\BoolQuery
-     */
     protected function createBoolQuery(): BoolQuery
     {
         return new BoolQuery();
     }
 
-    /**
-     * @return \Elastica\Query\MatchQuery
-     */
     protected function createMatchQuery(): MatchQuery
     {
         return new MatchQuery();
     }
 
-    /**
-     * @return \Spryker\Client\SearchExtension\Dependency\Plugin\QueryExpanderPluginInterface
-     */
     protected function createServiceTypesServicePointSearchQueryExpanderPlugin(): QueryExpanderPluginInterface
     {
         return new ServiceTypesServicePointSearchQueryExpanderPlugin();

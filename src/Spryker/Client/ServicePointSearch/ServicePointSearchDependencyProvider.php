@@ -44,11 +44,6 @@ class ServicePointSearchDependencyProvider extends AbstractDependencyProvider
      */
     public const PLUGINS_SERVICE_POINT_SEARCH_QUERY_EXPANDER = 'PLUGINS_SERVICE_POINT_SEARCH_QUERY_EXPANDER';
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     public function provideServiceLayerDependencies(Container $container): Container
     {
         $container = parent::provideServiceLayerDependencies($container);
@@ -62,11 +57,6 @@ class ServicePointSearchDependencyProvider extends AbstractDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     protected function addSearchClient(Container $container): Container
     {
         $container->set(static::CLIENT_SEARCH, function (Container $container) {
@@ -78,11 +68,6 @@ class ServicePointSearchDependencyProvider extends AbstractDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     protected function addStoreClient(Container $container): Container
     {
         $container->set(static::CLIENT_STORE, function (Container $container) {
@@ -94,11 +79,6 @@ class ServicePointSearchDependencyProvider extends AbstractDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     protected function addServicePointSearchQueryPlugin(Container $container): Container
     {
         $container->set(static::PLUGIN_SERVICE_POINT_SEARCH_QUERY, function () {
@@ -108,11 +88,6 @@ class ServicePointSearchDependencyProvider extends AbstractDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     protected function addServicePointSearchResultFormatterPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_SERVICE_POINT_SEARCH_RESULT_FORMATTER, function () {
@@ -122,11 +97,6 @@ class ServicePointSearchDependencyProvider extends AbstractDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     protected function addServicePointSearchQueryExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_SERVICE_POINT_SEARCH_QUERY_EXPANDER, function () {
@@ -136,9 +106,6 @@ class ServicePointSearchDependencyProvider extends AbstractDependencyProvider
         return $container;
     }
 
-    /**
-     * @return \Spryker\Client\SearchExtension\Dependency\Plugin\QueryInterface
-     */
     protected function createServicePointSearchQueryPlugin(): QueryInterface
     {
         return new ServicePointSearchQueryPlugin();

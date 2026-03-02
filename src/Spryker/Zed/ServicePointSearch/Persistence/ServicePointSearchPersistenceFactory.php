@@ -17,9 +17,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractPersistenceFactory;
  */
 class ServicePointSearchPersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\ServicePointSearch\Persistence\SpyServicePointSearchQuery
-     */
     public function getServicePointSearchPropelQuery(): SpyServicePointSearchQuery
     {
         return SpyServicePointSearchQuery::create();

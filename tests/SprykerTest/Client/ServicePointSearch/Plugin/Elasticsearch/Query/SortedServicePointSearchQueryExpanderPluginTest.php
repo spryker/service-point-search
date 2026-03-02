@@ -66,9 +66,6 @@ class SortedServicePointSearchQueryExpanderPluginTest extends Unit
      */
     protected SortedServicePointSearchQueryExpanderPlugin $sortedServicePointSearchQueryExpanderPlugin;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -76,9 +73,6 @@ class SortedServicePointSearchQueryExpanderPluginTest extends Unit
         $this->sortedServicePointSearchQueryExpanderPlugin = new SortedServicePointSearchQueryExpanderPlugin();
     }
 
-    /**
-     * @return void
-     */
     public function testExpandQueryShouldNotExpandWhileAlreadySortedByScore(): void
     {
         // Arrange
@@ -98,9 +92,6 @@ class SortedServicePointSearchQueryExpanderPluginTest extends Unit
         $this->assertFalse($sort->hasParam(static::PARAMETER_SORT));
     }
 
-    /**
-     * @return void
-     */
     public function testExpandQueryShouldExpandWithDefaultSortingWhileSortingIsUnknown(): void
     {
         // Arrange
@@ -121,9 +112,6 @@ class SortedServicePointSearchQueryExpanderPluginTest extends Unit
         $this->assertSame(static::ELASTIC_PARAMETER_SORT_ASC, $sort);
     }
 
-    /**
-     * @return void
-     */
     public function testExpandQueryShouldExpandWithSorting(): void
     {
         // Arrange

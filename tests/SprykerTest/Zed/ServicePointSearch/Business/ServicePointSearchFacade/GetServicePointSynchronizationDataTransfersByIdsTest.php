@@ -29,9 +29,6 @@ class GetServicePointSynchronizationDataTransfersByIdsTest extends Unit
      */
     protected ServicePointSearchBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -40,9 +37,6 @@ class GetServicePointSynchronizationDataTransfersByIdsTest extends Unit
         $this->tester->cleanUpDatabase();
     }
 
-    /**
-     * @return void
-     */
     public function testGetServicePointSynchronizationDataTransfersByIdsReturnsSynchronizationTransfers(): void
     {
         // Arrange
@@ -57,9 +51,6 @@ class GetServicePointSynchronizationDataTransfersByIdsTest extends Unit
         $this->assertCount(4, $synchronizationDataTransfers);
     }
 
-    /**
-     * @return void
-     */
     public function testGetServicePointSynchronizationDataTransfersByIdsReturnsSynchronizationTransferLimitedByProvidedIds(): void
     {
         // Arrange
@@ -75,9 +66,6 @@ class GetServicePointSynchronizationDataTransfersByIdsTest extends Unit
         $this->assertCount(2, $synchronizationDataTransfers);
     }
 
-    /**
-     * @return void
-     */
     public function testGetServicePointSynchronizationDataTransfersByIdsReturnsSynchronizationTransferLimitedByFilterLimit(): void
     {
         // Arrange
@@ -92,9 +80,6 @@ class GetServicePointSynchronizationDataTransfersByIdsTest extends Unit
         $this->assertCount(1, $synchronizationDataTransfers);
     }
 
-    /**
-     * @return void
-     */
     public function testGetServicePointSynchronizationDataTransfersByIdsReturnsSynchronizationTransferLimitedByFilterLimitAndIds(): void
     {
         // Arrange

@@ -16,19 +16,11 @@ class ServicePointSearchPaginationConfigBuilder implements PaginationConfigBuild
      */
     protected PaginationConfigTransfer $paginationConfigTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\PaginationConfigTransfer $paginationConfigTransfer
-     *
-     * @return void
-     */
     public function setPaginationConfigTransfer(PaginationConfigTransfer $paginationConfigTransfer): void
     {
         $this->paginationConfigTransfer = $paginationConfigTransfer;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\PaginationConfigTransfer
-     */
     public function getPaginationConfigTransfer(): PaginationConfigTransfer
     {
         return $this->paginationConfigTransfer;

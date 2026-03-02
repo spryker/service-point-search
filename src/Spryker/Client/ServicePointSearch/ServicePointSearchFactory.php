@@ -23,9 +23,6 @@ use Spryker\Client\ServicePointSearch\Reader\ServicePointSearchReaderInterface;
  */
 class ServicePointSearchFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Client\ServicePointSearch\Reader\ServicePointSearchReaderInterface
-     */
     public function createServicePointSearchReader(): ServicePointSearchReaderInterface
     {
         return new ServicePointSearchReader(
@@ -36,9 +33,6 @@ class ServicePointSearchFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\ServicePointSearch\Builder\PaginationConfigBuilderInterface
-     */
     public function createServicePointSearchPaginationConfigBuilder(): PaginationConfigBuilderInterface
     {
         $servicePointSearchPaginationConfigBuilder = new ServicePointSearchPaginationConfigBuilder();
@@ -49,9 +43,6 @@ class ServicePointSearchFactory extends AbstractFactory
         return $servicePointSearchPaginationConfigBuilder;
     }
 
-    /**
-     * @return \Spryker\Client\ServicePointSearch\Builder\SortConfigBuilderInterface
-     */
     public function createServicePointSearchSortConfigBuilder(): SortConfigBuilderInterface
     {
         return (new ServicePointSearchSortConfigBuilder())
@@ -59,33 +50,21 @@ class ServicePointSearchFactory extends AbstractFactory
             ->addSort($this->getConfig()->getDescendingCitySortConfigTransfer());
     }
 
-    /**
-     * @return \Spryker\Client\ServicePointSearch\ServicePointSearchConfig
-     */
     public function getServicePointSearchConfig(): ServicePointSearchConfig
     {
         return $this->getConfig();
     }
 
-    /**
-     * @return \Spryker\Client\ServicePointSearch\Dependency\Client\ServicePointSearchToSearchClientInterface
-     */
     public function getSearchClient(): ServicePointSearchToSearchClientInterface
     {
         return $this->getProvidedDependency(ServicePointSearchDependencyProvider::CLIENT_SEARCH);
     }
 
-    /**
-     * @return \Spryker\Client\ServicePointSearch\Dependency\Client\ServicePointSearchToStoreClientInterface
-     */
     public function getStoreClient(): ServicePointSearchToStoreClientInterface
     {
         return $this->getProvidedDependency(ServicePointSearchDependencyProvider::CLIENT_STORE);
     }
 
-    /**
-     * @return \Spryker\Client\SearchExtension\Dependency\Plugin\QueryInterface
-     */
     public function getServicePointSearchQueryPlugin(): QueryInterface
     {
         return $this->getProvidedDependency(ServicePointSearchDependencyProvider::PLUGIN_SERVICE_POINT_SEARCH_QUERY);

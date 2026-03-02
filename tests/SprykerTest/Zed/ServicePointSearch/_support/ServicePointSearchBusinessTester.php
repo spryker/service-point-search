@@ -83,9 +83,6 @@ class ServicePointSearchBusinessTester extends Actor
         });
     }
 
-    /**
-     * @return void
-     */
     public function cleanUpDatabase(): void
     {
         $this->ensureDatabaseTableIsEmpty($this->createServicePointSearchQuery());
@@ -150,9 +147,6 @@ class ServicePointSearchBusinessTester extends Actor
         return $eventEntityTransfers;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\ServicePointTransfer
-     */
     public function createPublishedServicePointForTwoStores(): ServicePointTransfer
     {
         $storeDE = $this->haveStore([StoreTransfer::NAME => static::TEST_STORE_DE]);
@@ -247,12 +241,6 @@ class ServicePointSearchBusinessTester extends Actor
         return $servicePointTransfer->setAddress($servicePointAddressTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointTransfer $servicePointTransfer
-     * @param array $data
-     *
-     * @return void
-     */
     public function assertServicePointData(ServicePointTransfer $servicePointTransfer, array $data): void
     {
         $this->assertSame(static::TYPE_SERVICE_POINT, $data[ServicePointIndexMap::TYPE]);
@@ -273,12 +261,6 @@ class ServicePointSearchBusinessTester extends Actor
         ], $data[ServicePointIndexMap::FULL_TEXT]);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointTransfer $servicePointTransfer
-     * @param array $data
-     *
-     * @return void
-     */
     public function assertServicePointSearchData(ServicePointTransfer $servicePointTransfer, array $data): void
     {
         $this->assertSame($servicePointTransfer->getIdServicePointOrFail(), $data[ServicePointTransfer::ID_SERVICE_POINT]);
@@ -287,12 +269,6 @@ class ServicePointSearchBusinessTester extends Actor
         $this->assertSame($servicePointTransfer->getKeyOrFail(), $data[ServicePointTransfer::KEY]);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointAddressTransfer $servicePointAddressTransfer
-     * @param array $data
-     *
-     * @return void
-     */
     public function assertServicePointAddressSearchData(ServicePointAddressTransfer $servicePointAddressTransfer, array $data): void
     {
         $this->assertSame(
@@ -350,11 +326,6 @@ class ServicePointSearchBusinessTester extends Actor
         $this->assertSame($serviceTypes, $data[ServicePointIndexMap::SERVICE_TYPES]);
     }
 
-    /**
-     * @param array<int, list<string> $servicePointStoreNames
-     *
-     * @return void
-     */
     protected function createServicePointSearchEntities(array $servicePointStoreNames): void
     {
         foreach ($servicePointStoreNames as $idServicePoint => $storeNames) {
@@ -410,41 +381,26 @@ class ServicePointSearchBusinessTester extends Actor
         return $servicePointAddressTransfer;
     }
 
-    /**
-     * @return \Orm\Zed\ServicePointSearch\Persistence\SpyServicePointSearchQuery
-     */
     protected function createServicePointSearchQuery(): SpyServicePointSearchQuery
     {
         return SpyServicePointSearchQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\ServicePoint\Persistence\SpyServicePointQuery
-     */
     protected function getServicePointQuery(): SpyServicePointQuery
     {
         return SpyServicePointQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\ServicePoint\Persistence\SpyServiceTypeQuery
-     */
     protected function getServiceTypeQuery(): SpyServiceTypeQuery
     {
         return SpyServiceTypeQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\ServicePoint\Persistence\SpyServiceQuery
-     */
     protected function getServiceQuery(): SpyServiceQuery
     {
         return SpyServiceQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\ServicePoint\Persistence\SpyServicePointAddressQuery
-     */
     protected function getServicePointAddressQuery(): SpyServicePointAddressQuery
     {
         return SpyServicePointAddressQuery::create();

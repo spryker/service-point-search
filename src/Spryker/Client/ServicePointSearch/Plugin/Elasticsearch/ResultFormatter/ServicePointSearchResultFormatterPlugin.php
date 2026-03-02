@@ -71,12 +71,6 @@ class ServicePointSearchResultFormatterPlugin extends AbstractElasticsearchResul
         return (new ServicePointSearchTransfer())->fromArray($data, true);
     }
 
-    /**
-     * @param \Elastica\ResultSet $searchResult
-     * @param \Generated\Shared\Transfer\ServicePointSearchCollectionTransfer $servicePointSearchCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointSearchCollectionTransfer
-     */
     protected function expandServicePointSearchCollectionTransferWithItemsPerPage(
         ResultSet $searchResult,
         ServicePointSearchCollectionTransfer $servicePointSearchCollectionTransfer

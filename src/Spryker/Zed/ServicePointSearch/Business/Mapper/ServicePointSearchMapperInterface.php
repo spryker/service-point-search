@@ -13,13 +13,6 @@ use Generated\Shared\Transfer\StoreTransfer;
 
 interface ServicePointSearchMapperInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointTransfer $servicePointTransfer
-     * @param \Generated\Shared\Transfer\ServicePointSearchTransfer $servicePointSearchTransfer
-     * @param \Generated\Shared\Transfer\StoreTransfer $storeTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointSearchTransfer
-     */
     public function mapServicePointTransferToServicePointSearchTransfer(
         ServicePointTransfer $servicePointTransfer,
         ServicePointSearchTransfer $servicePointSearchTransfer,

@@ -175,11 +175,6 @@ class ServicePointSearchDataMapper implements ServicePointSearchDataMapperInterf
         ];
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointAddressTransfer $servicePointAddressTransfer
-     *
-     * @return string
-     */
     protected function getFullServicePointAddress(ServicePointAddressTransfer $servicePointAddressTransfer): string
     {
         return trim(sprintf(

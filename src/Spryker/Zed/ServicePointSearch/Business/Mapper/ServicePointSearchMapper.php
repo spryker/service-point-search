@@ -25,10 +25,6 @@ class ServicePointSearchMapper implements ServicePointSearchMapperInterface
      */
     protected ServicePointSearchDataMapperInterface $servicePointSearchDataMapper;
 
-    /**
-     * @param \Spryker\Zed\ServicePointSearch\Dependency\Service\ServicePointSearchToUtilEncodingServiceInterface $utilEncodingService
-     * @param \Spryker\Zed\ServicePointSearch\Business\DataMapper\ServicePointSearchDataMapperInterface $servicePointSearchDataMapper
-     */
     public function __construct(
         ServicePointSearchToUtilEncodingServiceInterface $utilEncodingService,
         ServicePointSearchDataMapperInterface $servicePointSearchDataMapper
@@ -37,13 +33,6 @@ class ServicePointSearchMapper implements ServicePointSearchMapperInterface
         $this->servicePointSearchDataMapper = $servicePointSearchDataMapper;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointTransfer $servicePointTransfer
-     * @param \Generated\Shared\Transfer\ServicePointSearchTransfer $servicePointSearchTransfer
-     * @param \Generated\Shared\Transfer\StoreTransfer $storeTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointSearchTransfer
-     */
     public function mapServicePointTransferToServicePointSearchTransfer(
         ServicePointTransfer $servicePointTransfer,
         ServicePointSearchTransfer $servicePointSearchTransfer,

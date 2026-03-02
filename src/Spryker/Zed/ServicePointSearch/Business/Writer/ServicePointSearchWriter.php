@@ -74,14 +74,6 @@ class ServicePointSearchWriter implements ServicePointSearchWriterInterface
      */
     protected ServicePointSearchRepositoryInterface $servicePointSearchRepository;
 
-    /**
-     * @param \Spryker\Zed\ServicePointSearch\Dependency\Facade\ServicePointSearchToServicePointFacadeInterface $servicePointFacade
-     * @param \Spryker\Zed\ServicePointSearch\Dependency\Facade\ServicePointSearchToStoreFacadeInterface $storeFacade
-     * @param \Spryker\Zed\ServicePointSearch\Dependency\Facade\ServicePointSearchToEventBehaviorFacadeInterface $eventBehaviorFacade
-     * @param \Spryker\Zed\ServicePointSearch\Business\Mapper\ServicePointSearchMapperInterface $servicePointSearchMapper
-     * @param \Spryker\Zed\ServicePointSearch\Persistence\ServicePointSearchRepositoryInterface $servicePointSearchRepository
-     * @param \Spryker\Zed\ServicePointSearch\Persistence\ServicePointSearchEntityManagerInterface $servicePointSearchEntityManager
-     */
     public function __construct(
         ServicePointSearchToServicePointFacadeInterface $servicePointFacade,
         ServicePointSearchToStoreFacadeInterface $storeFacade,
@@ -291,12 +283,6 @@ class ServicePointSearchWriter implements ServicePointSearchWriterInterface
         return $indexedServicePointSearchTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointTransfer $servicePointTransfer
-     * @param \Generated\Shared\Transfer\StoreTransfer $storeTransfer
-     *
-     * @return bool
-     */
     protected function isServicePointAvailableInStore(ServicePointTransfer $servicePointTransfer, StoreTransfer $storeTransfer): bool
     {
         if (!$servicePointTransfer->getStoreRelation()) {
@@ -343,11 +329,6 @@ class ServicePointSearchWriter implements ServicePointSearchWriterInterface
         return $servicePointSearchIds;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointTransfer $servicePointTransfer
-     *
-     * @return void
-     */
     protected function filterOutInactiveServices(ServicePointTransfer $servicePointTransfer): void
     {
         $activeServiceTransfers = new ArrayObject();

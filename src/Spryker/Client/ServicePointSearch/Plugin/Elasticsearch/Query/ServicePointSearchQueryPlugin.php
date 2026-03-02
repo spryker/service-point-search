@@ -127,9 +127,6 @@ class ServicePointSearchQueryPlugin extends AbstractPlugin implements QueryInter
         return $this->searchString;
     }
 
-    /**
-     * @return \Elastica\Query
-     */
     protected function createQuery(): Query
     {
         $query = new BoolQuery();
@@ -143,11 +140,6 @@ class ServicePointSearchQueryPlugin extends AbstractPlugin implements QueryInter
             ->setSource(ServicePointIndexMap::SEARCH_RESULT_DATA);
     }
 
-    /**
-     * @param \Elastica\Query\BoolQuery $boolQuery
-     *
-     * @return \Elastica\Query\BoolQuery
-     */
     protected function addTypeQuery(BoolQuery $boolQuery): BoolQuery
     {
         $typeQuery = (new Term())->setTerm(
@@ -158,11 +150,6 @@ class ServicePointSearchQueryPlugin extends AbstractPlugin implements QueryInter
         return $boolQuery->addMust($typeQuery);
     }
 
-    /**
-     * @param \Elastica\Query\BoolQuery $boolQuery
-     *
-     * @return \Elastica\Query\BoolQuery
-     */
     protected function addFullTextQuery(BoolQuery $boolQuery): BoolQuery
     {
         if (!$this->searchString) {
@@ -177,9 +164,6 @@ class ServicePointSearchQueryPlugin extends AbstractPlugin implements QueryInter
         return $boolQuery->addMust($fullTextQuery);
     }
 
-    /**
-     * @return \Elastica\Query\Wildcard
-     */
     protected function createFullTextWildcard(): Wildcard
     {
         return new Wildcard(
@@ -188,9 +172,6 @@ class ServicePointSearchQueryPlugin extends AbstractPlugin implements QueryInter
         );
     }
 
-    /**
-     * @return \Elastica\Query\Wildcard
-     */
     protected function createFullTextBoostedWildcard(): Wildcard
     {
         return new Wildcard(
@@ -200,9 +181,6 @@ class ServicePointSearchQueryPlugin extends AbstractPlugin implements QueryInter
         );
     }
 
-    /**
-     * @return \Elastica\Query\MultiMatch
-     */
     protected function createFulltextSearchQuery(): MultiMatch
     {
         $fields = [
@@ -220,9 +198,6 @@ class ServicePointSearchQueryPlugin extends AbstractPlugin implements QueryInter
             ->setType(MultiMatch::TYPE_PHRASE_PREFIX);
     }
 
-    /**
-     * @return string
-     */
     protected function createWildcardValue(): string
     {
         return sprintf('*%s*', (string)$this->searchString);

@@ -55,11 +55,6 @@ class ServicePointSearchEntityManager extends AbstractEntityManager implements S
         $servicePointSearchCollection->delete();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointSearchTransfer $servicePointSearchTransfer
-     *
-     * @return void
-     */
     public function saveServicePointSearch(ServicePointSearchTransfer $servicePointSearchTransfer): void
     {
         $servicePointSearchEntity = $this->getFactory()

@@ -29,9 +29,6 @@ use Spryker\Zed\ServicePointSearch\ServicePointSearchDependencyProvider;
  */
 class ServicePointSearchBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\ServicePointSearch\Business\Writer\ServicePointSearchWriterInterface
-     */
     public function createServicePointSearchWriter(): ServicePointSearchWriterInterface
     {
         return new ServicePointSearchWriter(
@@ -44,9 +41,6 @@ class ServicePointSearchBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePointSearch\Business\Deleter\ServicePointSearchDeleterInterface
-     */
     public function createServicePointSearchDeleter(): ServicePointSearchDeleterInterface
     {
         return new ServicePointSearchDeleter(
@@ -55,9 +49,6 @@ class ServicePointSearchBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePointSearch\Business\DataMapper\ServicePointSearchDataMapperInterface
-     */
     public function createServicePointSearchDataMapper(): ServicePointSearchDataMapperInterface
     {
         return new ServicePointSearchDataMapper(
@@ -65,9 +56,6 @@ class ServicePointSearchBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePointSearch\Business\Mapper\ServicePointSearchMapperInterface
-     */
     public function createServicePointSearchMapper(): ServicePointSearchMapperInterface
     {
         return new ServicePointSearchMapper(
@@ -76,33 +64,21 @@ class ServicePointSearchBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePointSearch\Dependency\Facade\ServicePointSearchToEventBehaviorFacadeInterface
-     */
     public function getEventBehaviorFacade(): ServicePointSearchToEventBehaviorFacadeInterface
     {
         return $this->getProvidedDependency(ServicePointSearchDependencyProvider::FACADE_EVENT_BEHAVIOR);
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePointSearch\Dependency\Facade\ServicePointSearchToServicePointFacadeInterface
-     */
     public function getServicePointFacade(): ServicePointSearchToServicePointFacadeInterface
     {
         return $this->getProvidedDependency(ServicePointSearchDependencyProvider::FACADE_SERVICE_POINT);
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePointSearch\Dependency\Facade\ServicePointSearchToStoreFacadeInterface
-     */
     public function getStoreFacade(): ServicePointSearchToStoreFacadeInterface
     {
         return $this->getProvidedDependency(ServicePointSearchDependencyProvider::FACADE_STORE);
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePointSearch\Dependency\Service\ServicePointSearchToUtilEncodingServiceInterface
-     */
     public function getUtilEncodingService(): ServicePointSearchToUtilEncodingServiceInterface
     {
         return $this->getProvidedDependency(ServicePointSearchDependencyProvider::SERVICE_UTIL_ENCODING);

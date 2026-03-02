@@ -11,8 +11,5 @@ use Generated\Shared\Transfer\StoreTransfer;
 
 interface ServicePointSearchToStoreClientInterface
 {
-    /**
-     * @return \Generated\Shared\Transfer\StoreTransfer
-     */
     public function getCurrentStore(): StoreTransfer;
 }

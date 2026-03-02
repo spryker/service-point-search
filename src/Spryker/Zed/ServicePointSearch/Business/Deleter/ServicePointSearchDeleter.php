@@ -22,10 +22,6 @@ class ServicePointSearchDeleter implements ServicePointSearchDeleterInterface
      */
     protected ServicePointSearchToEventBehaviorFacadeInterface $eventBehaviorFacade;
 
-    /**
-     * @param \Spryker\Zed\ServicePointSearch\Dependency\Facade\ServicePointSearchToEventBehaviorFacadeInterface $eventBehaviorFacade
-     * @param \Spryker\Zed\ServicePointSearch\Persistence\ServicePointSearchEntityManagerInterface $servicePointSearchEntityManager
-     */
     public function __construct(
         ServicePointSearchToEventBehaviorFacadeInterface $eventBehaviorFacade,
         ServicePointSearchEntityManagerInterface $servicePointSearchEntityManager

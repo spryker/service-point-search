@@ -41,9 +41,6 @@ class WriteCollectionByServicePointStoreEventsTest extends Unit
      */
     protected ServicePointSearchBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -52,9 +49,6 @@ class WriteCollectionByServicePointStoreEventsTest extends Unit
         $this->tester->cleanUpDatabase();
     }
 
-    /**
-     * @return void
-     */
     public function testWriteCollectionByServicePointStoreEventsShouldUpdateServicePointSearchEntities(): void
     {
         // Arrange
@@ -82,9 +76,6 @@ class WriteCollectionByServicePointStoreEventsTest extends Unit
         $this->assertCount(1, $this->tester->getServicePointSearchEntitiesByServicePointIds([$idServicePoint]));
     }
 
-    /**
-     * @return void
-     */
     public function testWriteCollectionByServicePointStoreEventsShouldRemoveAllServicePointSearchEntities(): void
     {
         // Arrange
@@ -108,9 +99,6 @@ class WriteCollectionByServicePointStoreEventsTest extends Unit
         $this->assertCount(0, $this->tester->getServicePointSearchEntitiesByServicePointIds([$idServicePoint]));
     }
 
-    /**
-     * @return void
-     */
     public function testWriteCollectionByServicePointStoreEventsDoesNothingForEmptyEventTransfers(): void
     {
         // Act

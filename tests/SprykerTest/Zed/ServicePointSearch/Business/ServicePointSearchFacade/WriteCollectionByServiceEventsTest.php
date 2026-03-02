@@ -41,9 +41,6 @@ class WriteCollectionByServiceEventsTest extends Unit
      */
     protected ServicePointSearchBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -92,9 +89,6 @@ class WriteCollectionByServiceEventsTest extends Unit
         $this->tester->assertServiceData($serviceTypes, $data);
     }
 
-    /**
-     * @return void
-     */
     public function testWriteCollectionByServiceEventsDoesNothingForEmptyEventTransfers(): void
     {
         // Act

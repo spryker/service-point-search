@@ -43,11 +43,6 @@ class ServicePointSearchClientTester extends Actor
         ]);
     }
 
-    /**
-     * @param \Elastica\Query\AbstractQuery|null $abstractQuery
-     *
-     * @return \Elastica\Query
-     */
     public function createSearchQuery(?AbstractQuery $abstractQuery = null): Query
     {
         return new Query($abstractQuery);

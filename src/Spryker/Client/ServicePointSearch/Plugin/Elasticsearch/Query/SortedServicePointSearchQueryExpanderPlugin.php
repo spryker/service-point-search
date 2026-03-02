@@ -42,11 +42,6 @@ class SortedServicePointSearchQueryExpanderPlugin extends AbstractPlugin impleme
         return $this->addSorting($searchQuery, $requestParameters);
     }
 
-    /**
-     * @param \Spryker\Client\SearchExtension\Dependency\Plugin\QueryInterface $searchQuery
-     *
-     * @return bool
-     */
     protected function hasSortingByScore(QueryInterface $searchQuery): bool
     {
         return (bool)$searchQuery->getSearchString();

@@ -42,9 +42,6 @@ class ServicePointSearchQueryPluginTest extends Unit
      */
     protected const SEARCH_STRING = 'searchString';
 
-    /**
-     * @return void
-     */
     public function testGetSearchQueryShouldReturnQueryWithFullTextQueryUsingWildcardsAndMultiMatch(): void
     {
         // Arrange
@@ -64,9 +61,6 @@ class ServicePointSearchQueryPluginTest extends Unit
         $this->assertSame('search-result-data', $searchQuery['_source']);
     }
 
-    /**
-     * @return void
-     */
     public function testGetSearchQueryShouldReturnQueryWithoutFullTextQuery(): void
     {
         // Arrange
@@ -81,11 +75,6 @@ class ServicePointSearchQueryPluginTest extends Unit
         $this->assertSame('search-result-data', $searchQuery['_source']);
     }
 
-    /**
-     * @param array $searchQuery
-     *
-     * @return void
-     */
     protected function assertFullTextWildcard(array $searchQuery): void
     {
         $wildcard = $searchQuery['query']['bool']['must'][1]['bool']['should'][0]['wildcard']['full-text'];
@@ -94,11 +83,6 @@ class ServicePointSearchQueryPluginTest extends Unit
         $this->assertSame(1.0, (float)$wildcard['boost']);
     }
 
-    /**
-     * @param array $searchQuery
-     *
-     * @return void
-     */
     protected function assertFullTextBoostedWildcard(array $searchQuery): void
     {
         $wildcard = $searchQuery['query']['bool']['must'][1]['bool']['should'][1]['wildcard']['full-text-boosted'];
@@ -107,11 +91,6 @@ class ServicePointSearchQueryPluginTest extends Unit
         $this->assertSame(static::FULL_TEXT_BOOSTED_VALUE, (float)$wildcard['boost']);
     }
 
-    /**
-     * @param array $searchQuery
-     *
-     * @return void
-     */
     protected function assertFullTextMultiMatch(array $searchQuery): void
     {
         $multiMatch = $searchQuery['query']['bool']['must'][1]['bool']['should'][2]['multi_match'];
@@ -123,11 +102,6 @@ class ServicePointSearchQueryPluginTest extends Unit
         $this->assertSame([ServicePointIndexMap::FULL_TEXT, $boostedField], $multiMatch['fields']);
     }
 
-    /**
-     * @param array $searchQuery
-     *
-     * @return void
-     */
     protected function assertTerm(array $searchQuery): void
     {
         $term = $searchQuery['query']['bool']['must'][0]['term']['type'];

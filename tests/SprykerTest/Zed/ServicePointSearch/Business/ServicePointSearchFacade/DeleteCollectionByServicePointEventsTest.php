@@ -28,9 +28,6 @@ class DeleteCollectionByServicePointEventsTest extends Unit
      */
     protected ServicePointSearchBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -39,9 +36,6 @@ class DeleteCollectionByServicePointEventsTest extends Unit
         $this->tester->cleanUpDatabase();
     }
 
-    /**
-     * @return void
-     */
     public function testDeleteCollectionByServicePointEventsShouldCleanupSearchTable(): void
     {
         // Arrange
@@ -55,9 +49,6 @@ class DeleteCollectionByServicePointEventsTest extends Unit
         $this->assertCount(0, $this->tester->getServicePointSearchEntitiesByServicePointIds($servicePointIds));
     }
 
-    /**
-     * @return void
-     */
     public function testDeleteCollectionByServicePointEventsDoesNothingForEmptyEventTransfers(): void
     {
         // Arrange
